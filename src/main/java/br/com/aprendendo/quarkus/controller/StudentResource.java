@@ -3,7 +3,6 @@ package br.com.aprendendo.quarkus.controller;
 import br.com.aprendendo.quarkus.domain.Student;
 import br.com.aprendendo.quarkus.repository.StudentRepository;
 import javax.transaction.Transactional;
-import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 import java.util.List;
@@ -29,7 +28,7 @@ public class StudentResource {
 
     @POST
     @Transactional
-    public Response addStudent(@Valid Student student, @Context UriInfo uriInfo){
+    public Response addStudent(Student student, @Context UriInfo uriInfo){
         studentRepository.persist(student);
         UriBuilder builder = uriInfo.getAbsolutePathBuilder();
         builder.path(student.getId().toString());

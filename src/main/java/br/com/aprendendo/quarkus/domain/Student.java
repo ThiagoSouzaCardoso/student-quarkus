@@ -20,7 +20,7 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public Student() {
+    protected Student() {
     }
 
     public UUID getId() {
