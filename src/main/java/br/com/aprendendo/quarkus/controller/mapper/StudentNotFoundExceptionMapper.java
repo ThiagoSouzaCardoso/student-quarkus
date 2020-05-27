@@ -14,6 +14,6 @@ public class StudentNotFoundExceptionMapper implements ExceptionMapper<StudentNo
 
     @Override
     public Response toResponse(StudentNotFoundException exception) {
-        return status(Response.Status.NOT_FOUND).type(MediaType.APPLICATION_JSON).entity(exception.getMessage()).build();
+        return status(Response.Status.NOT_FOUND).entity(exception.getMessage()).build();
     }
 }
